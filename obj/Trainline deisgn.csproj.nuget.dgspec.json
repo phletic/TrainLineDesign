@@ -1,32 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "D:\\python\\Trainline deisgn\\Trainline deisgn.csproj": {}
+    "/home/runner/trainlinedesign/Trainline deisgn.csproj": {}
   },
   "projects": {
-    "D:\\python\\Trainline deisgn\\Trainline deisgn.csproj": {
+    "/home/runner/trainlinedesign/Trainline deisgn.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\python\\Trainline deisgn\\Trainline deisgn.csproj",
+        "projectUniqueName": "/home/runner/trainlinedesign/Trainline deisgn.csproj",
         "projectName": "Trainline deisgn",
-        "projectPath": "D:\\python\\Trainline deisgn\\Trainline deisgn.csproj",
-        "packagesPath": "C:\\Users\\chave\\.nuget\\packages\\",
-        "outputPath": "D:\\python\\Trainline deisgn\\obj\\",
+        "projectPath": "/home/runner/trainlinedesign/Trainline deisgn.csproj",
+        "packagesPath": "/home/runner/.nuget/packages/",
+        "outputPath": "/home/runner/trainlinedesign/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\chave\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/runner/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net7.0"
+          "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net7.0": {
-            "targetAlias": "net7.0",
+          "net6.0": {
+            "targetAlias": "net6.0",
             "projectReferences": {}
           }
         },
@@ -37,16 +35,15 @@
         }
       },
       "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
+        "net6.0": {
+          "targetAlias": "net6.0",
           "imports": [
             "net461",
             "net462",
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -55,7 +52,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/nix/store/jsm5am5i2b2izvwzbw5h6lk3plvpkrlw-dotnet-sdk-6.0.100/sdk/6.0.100/RuntimeIdentifierGraph.json"
         }
       }
     }

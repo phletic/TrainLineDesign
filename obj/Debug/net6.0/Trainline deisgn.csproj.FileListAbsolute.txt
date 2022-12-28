@@ -1,0 +1,15 @@
+/home/runner/trainlinedesign/bin/Debug/net6.0/Trainline deisgn
+/home/runner/trainlinedesign/bin/Debug/net6.0/Trainline deisgn.deps.json
+/home/runner/trainlinedesign/bin/Debug/net6.0/Trainline deisgn.runtimeconfig.json
+/home/runner/trainlinedesign/bin/Debug/net6.0/Trainline deisgn.dll
+/home/runner/trainlinedesign/bin/Debug/net6.0/ref/Trainline deisgn.dll
+/home/runner/trainlinedesign/bin/Debug/net6.0/Trainline deisgn.pdb
+/home/runner/trainlinedesign/obj/Debug/net6.0/Trainline deisgn.csproj.AssemblyReference.cache
+/home/runner/trainlinedesign/obj/Debug/net6.0/Trainline deisgn.GeneratedMSBuildEditorConfig.editorconfig
+/home/runner/trainlinedesign/obj/Debug/net6.0/Trainline deisgn.AssemblyInfoInputs.cache
+/home/runner/trainlinedesign/obj/Debug/net6.0/Trainline deisgn.AssemblyInfo.cs
+/home/runner/trainlinedesign/obj/Debug/net6.0/Trainline deisgn.csproj.CoreCompileInputs.cache
+/home/runner/trainlinedesign/obj/Debug/net6.0/Trainline deisgn.dll
+/home/runner/trainlinedesign/obj/Debug/net6.0/ref/Trainline deisgn.dll
+/home/runner/trainlinedesign/obj/Debug/net6.0/Trainline deisgn.pdb
+/home/runner/trainlinedesign/obj/Debug/net6.0/Trainline deisgn.genruntimeconfig.cache

@@ -36,26 +36,22 @@ namespace TrainLineDesigner
             }
         }
 
-
-        public void WriteMap(int[] x, int[] y, T[] data)
+			        public T ReadChunk(int xy)
         {
-            if (x.Length == y.Length && y.Length == data.Length)
+            if(ChunkMap.ContainsKey(xy))
             {
-                for (int i = 0; i < x.Length; i++)
-                {
-                    WriteChunk(x[i], y[i], data[i]);
-                }
-            }
-            else
-            {
-                throw new Exception("WriteMap array params must be equal in length!");
+                return ChunkMap[xy];
+            }else{
+                return default(T);
             }
         }
 
 
-        public void WriteMap(int[] x, int[] y, T[] data, int MapWidth)
+        public void WriteMap(int[] x, int[] y, T[] data, int MapWidth = 0)
         {
-            this.MapWidth = MapWidth;
+					if(MapWidth != 0){
+						this.MapWidth = MapWidth;
+					}
             if (x.Length == y.Length && y.Length == data.Length)
             {
                 for (int i = 0; i < x.Length; i++)
