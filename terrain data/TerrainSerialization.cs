@@ -1,4 +1,6 @@
+using System.Globalization;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 namespace TrainLineDesigner{
     
     class TerrainSerializer{
@@ -19,11 +21,40 @@ namespace TrainLineDesigner{
         }
 
         public void Write(){
+            Console.WriteLine(fileName);
             using FileStream Stream = File.Create(fileName);
-            JsonSerializer.SerializeAsync(Stream, terrain);
+            JsonSerializer.SerializeAsync(Stream, terrain/*,serializeOptions*/);
             Stream.DisposeAsync();
         }
     }
+
+    // TODO: Add a converter for Dictionary<Location, T>
+    public class LocationJSONConverter : JsonConverter<Location>
+    {
+        public override Location Read(
+            ref Utf8JsonReader reader,
+            Type typeToConvert,
+            JsonSerializerOptions options) => Location.Create(reader.GetString()!);
+
+        public override void Write(
+            Utf8JsonWriter writer,
+            Location val,
+            JsonSerializerOptions options) =>
+                writer.WriteStringValue(val.position.ToString());
+    }
+
+    /*
+                var serializeOptions = new JsonSerializerOptions
+            {
+                WriteIndented = true,
+                Converters =
+                {
+                    new LocationJSONConverter()
+                }
+            };
+    */
+
+    
 }
 
 // output:

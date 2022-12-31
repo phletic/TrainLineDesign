@@ -13,3 +13,18 @@
 /home/runner/trainlinedesign/obj/Debug/net6.0/ref/Trainline deisgn.dll
 /home/runner/trainlinedesign/obj/Debug/net6.0/Trainline deisgn.pdb
 /home/runner/trainlinedesign/obj/Debug/net6.0/Trainline deisgn.genruntimeconfig.cache
+D:\python\Trainline deisgn\bin\Debug\net6.0\Trainline deisgn.exe
+D:\python\Trainline deisgn\bin\Debug\net6.0\Trainline deisgn.deps.json
+D:\python\Trainline deisgn\bin\Debug\net6.0\Trainline deisgn.runtimeconfig.json
+D:\python\Trainline deisgn\bin\Debug\net6.0\Trainline deisgn.dll
+D:\python\Trainline deisgn\bin\Debug\net6.0\Trainline deisgn.pdb
+D:\python\Trainline deisgn\obj\Debug\net6.0\Trainline deisgn.csproj.AssemblyReference.cache
+D:\python\Trainline deisgn\obj\Debug\net6.0\Trainline deisgn.GeneratedMSBuildEditorConfig.editorconfig
+D:\python\Trainline deisgn\obj\Debug\net6.0\Trainline deisgn.AssemblyInfoInputs.cache
+D:\python\Trainline deisgn\obj\Debug\net6.0\Trainline deisgn.AssemblyInfo.cs
+D:\python\Trainline deisgn\obj\Debug\net6.0\Trainline deisgn.csproj.CoreCompileInputs.cache
+D:\python\Trainline deisgn\obj\Debug\net6.0\Trainline deisgn.dll
+D:\python\Trainline deisgn\obj\Debug\net6.0\refint\Trainline deisgn.dll
+D:\python\Trainline deisgn\obj\Debug\net6.0\Trainline deisgn.pdb
+D:\python\Trainline deisgn\obj\Debug\net6.0\Trainline deisgn.genruntimeconfig.cache
+D:\python\Trainline deisgn\obj\Debug\net6.0\ref\Trainline deisgn.dll

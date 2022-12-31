@@ -2,61 +2,53 @@ namespace TrainLineDesigner
 {
     public class Map<T> where T: struct
     {
+
+        /*
         public int Get1DCoordinate(int x, int y, int MapWidth)
         {
             return MapWidth * y + x;
         }
+        */
 
-        public Dictionary<int, T> ChunkMap {get; set;}
-        public int MapWidth;
+        public Dictionary<Location, T> ChunkMap {get; set;}
+        public int MapWidth {get; set;}
         public Map(int MapWidth)
         {
-            ChunkMap = new Dictionary<int, T>();
+            ChunkMap = new Dictionary<Location, T>();
             this.MapWidth = MapWidth;
         }
 
         public Map()
         {
-            ChunkMap = new Dictionary<int, T>();
+            ChunkMap = new Dictionary<Location, T>();
         }
 
-        public void WriteChunk(int x, int y, T data)
+        public void WriteChunk(Location L, T data)
         {
-            ChunkMap.Add(Get1DCoordinate(x,y,MapWidth), data);
+            ChunkMap.Add(L, data);
         }
 
-        public T ReadChunk(int x, int y)
+        public T ReadChunk(Location L)
         {
-            int target = Get1DCoordinate(x,y,MapWidth);
-            if(ChunkMap.ContainsKey(target))
+            if(ChunkMap.ContainsKey(L))
             {
-                return ChunkMap[target];
-            }else{
-                return default(T);
-            }
-        }
-
-			        public T ReadChunk(int xy)
-        {
-            if(ChunkMap.ContainsKey(xy))
-            {
-                return ChunkMap[xy];
+                return ChunkMap[L];
             }else{
                 return default(T);
             }
         }
 
 
-        public void WriteMap(int[] x, int[] y, T[] data, int MapWidth = 0)
+        public void WriteMap(Location[] L, T[] data, int MapWidth = 0)
         {
 					if(MapWidth != 0){
 						this.MapWidth = MapWidth;
 					}
-            if (x.Length == y.Length && y.Length == data.Length)
+            if (L.Length==data.Length)
             {
-                for (int i = 0; i < x.Length; i++)
+                for (int i = 0; i < L.Length; i++)
                 {
-                    WriteChunk(x[i], y[i], data[i]);
+                    WriteChunk(L[i], data[i]);
                 }
             }
             else

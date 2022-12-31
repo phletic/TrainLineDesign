@@ -1,9 +1,5 @@
 namespace TrainLineDesigner
 {
-
-    // TODO: 
-    // 1. Remove repetition of Terrain map data
-    // 2. clean up the code
     public enum Zones
     {
         NoZone, // Default -- not the rest is this
@@ -23,14 +19,9 @@ namespace TrainLineDesigner
             ZoningMap = new Map<Zones>();
         }
 
-        public LandData GetChunkData(int x, int y)
+        public LandData GetChunkData(Location L)
         {
-            return new LandData(ElevationMap.ReadChunk(x, y), ZoningMap.ReadChunk(x, y));
-        }
-
-        public LandData GetChunkData(int xy)
-        {
-            return new LandData(ElevationMap.ReadChunk(xy), ZoningMap.ReadChunk(xy));
+            return new LandData(ElevationMap.ReadChunk(L), ZoningMap.ReadChunk(L));
         }
 
     }
@@ -50,7 +41,6 @@ namespace TrainLineDesigner
         public int MapWidth { get; set; }
         public int MapHeight { get; set; }
         public TerrainMapData TerrainMaps { get; set; }
-
         public Terrain(int MapHeight, int MapWidth)
         {
             this.MapWidth = MapWidth;
@@ -59,36 +49,34 @@ namespace TrainLineDesigner
 
         public void WriteTerrain(TerrainMapData terrainMap)
         {
+            Console.WriteLine(
+            "hiiiii!!"
+            );
             this.TerrainMaps = terrainMap;
             Console.WriteLine(IsRegionEnclosed());
-        }
-
-        public LandData ReadTerrain(int x, int y)
-        {
-            return TerrainMaps.GetChunkData(x, y);
         }
 
         public class BorderCell
         {
             public bool Visited;
             public int[]? Neighbours;
-            public int position;
+            public Location position;
 
-            public BorderCell(int position)
+            public BorderCell(Location position)
             {
                 this.position = position;
                 this.Visited = false;
             }
         }
-			//todo: If backtrack -- immediately fail it 
+        //TODO: Prune the region
         public bool IsRegionEnclosed()
         {
-            Dictionary<int, BorderCell> BorderCells = new Dictionary<int, BorderCell>();
-            foreach (KeyValuePair<int, Zones> location in TerrainMaps.ZoningMap.ChunkMap)
+            Dictionary<Location, BorderCell> BorderCells = new Dictionary<Location, BorderCell>();
+            foreach (KeyValuePair<Location, Zones> l in TerrainMaps.ZoningMap.ChunkMap)
             {
-                if (location.Value == Zones.Border)
+                if (l.Value == Zones.Border)
                 {
-                    int position = location.Key;
+                    Location position = l.Key;
                     BorderCells.Add(position, new BorderCell(position));
                 }
             }
@@ -104,18 +92,18 @@ namespace TrainLineDesigner
                 Console.WriteLine(CurrentCell.position);
                 if (CurrentCell.Neighbours == null)
                 {
-                    int[] possibleNeighbours = {
-                                            CurrentCell.position+1,
-                                              CurrentCell.position-1,
-                                                                           CurrentCell.position+MapWidth,
-                                                                                        CurrentCell.position-MapWidth,
-                                             CurrentCell.position+MapWidth+1,
-                                             CurrentCell.position+MapWidth-1,
-                                             CurrentCell.position-MapWidth+1,
-                                             CurrentCell.position-MapWidth-1,
+                    Location[] possibleNeighbours = {
+                                            Location.Shift(CurrentCell.position,1,0,MapWidth),
+                                            Location.Shift(CurrentCell.position,-1,0,MapWidth),
+                                            Location.Shift(CurrentCell.position,0,1,MapWidth),
+                                            Location.Shift(CurrentCell.position,0,-1, MapWidth),
+                                            Location.Shift(CurrentCell.position,1,1, MapWidth),
+                                            Location.Shift(CurrentCell.position,1,-1, MapWidth),
+                                            Location.Shift(CurrentCell.position,-1,1,MapWidth),
+                                            Location.Shift(CurrentCell.position,-1,1,MapWidth),
                                     };
                     List<int> neighbours = new List<int>();
-                    foreach (int possibleNeighbour in possibleNeighbours)
+                    foreach (Location possibleNeighbour in possibleNeighbours)
                     {
                         if (BorderCells.ContainsKey(possibleNeighbour))
                         {
